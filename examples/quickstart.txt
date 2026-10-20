@@ -1,0 +1,14 @@
+# risk-sizer quickstart — copy, paste, run (needs Node >= 18)
+
+# 1. How many lots? $500 balance, risk 1%, 300-point XAUUSD stop
+risk-sizer size --symbol XAUUSD --balance 500 --risk-pct 1 --sl-points 300
+
+# 2. Check risk of a planned trade: 0.5 lots EURUSD, 25-pip stop
+risk-sizer verify --symbol EURUSD --balance 2000 --lots 0.5 --sl-pips 25
+
+# 3. IDR account: Rp 8jt balance, risk 2%, 500-point stop, machine output
+risk-sizer size --symbol XAUUSD --balance 8000000 --risk-pct 2 --sl-points 500 \
+  --account-ccy IDR --fx USDIDR=16000 --json
+
+# 4. What symbols are built in?
+risk-sizer specs
